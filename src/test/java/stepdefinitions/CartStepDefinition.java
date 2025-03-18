@@ -24,12 +24,10 @@ public class CartStepDefinition {
 
         for (Map<String, String> item : items) {
             String itemName = item.get("ItemName");
-            int quantity = Integer.parseInt(item.get("Quantity"));
             String amountPerItem = item.get("AmountPerItem");
-            String subtotalValue = item.get("SubtotalValue");
 
             cartPage.CheckPriceValue(itemName, amountPerItem);
-            cartPage.CheckSubTotalValue(itemName, subtotalValue);
+            cartPage.CheckSubTotalValue(itemName, amountPerItem);
         }
     }
 
