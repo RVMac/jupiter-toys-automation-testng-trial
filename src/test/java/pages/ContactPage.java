@@ -35,13 +35,25 @@ public class ContactPage {
     }
 
     public void verifyHeaderPageErrorMessage(boolean isDisplayed) {
-        Assert.assertEquals(isDisplayed, common.isElementDisplayed(HeaderPageErrorMessage), "Header error message error. Expected: IsDisplayed = " + isDisplayed + "; IsDisplayed = " + !isDisplayed);
+
+        if (isDisplayed){
+            common.waitForElementToBePresent(HeaderPageErrorMessage);
+        } else {
+            common.waitForElementToBeNotVisible(HeaderPageErrorMessage);
+        }
     }
 
     public void verifyRequiredFieldsErrorMessages(boolean isDisplayed) {
-        Assert.assertEquals(isDisplayed, common.isElementDisplayed(ForenameErrorMessage), "Forename error message error. Expected: IsDisplayed = " + isDisplayed + "; IsDisplayed = " + !isDisplayed);
-        Assert.assertEquals(isDisplayed, common.isElementDisplayed(EmailErrorMessage), "Email error message error. Expected: IsDisplayed = " + isDisplayed + "; IsDisplayed = " + !isDisplayed);
-        Assert.assertEquals(isDisplayed, common.isElementDisplayed(FeedbackMessageErrorMessage), "Feedback message error message error. Expected: IsDisplayed = " + isDisplayed + "; IsDisplayed = " + !isDisplayed);
+
+        if (isDisplayed){
+            common.waitForElementToBePresent(ForenameErrorMessage);
+            common.waitForElementToBePresent(EmailErrorMessage);
+            common.waitForElementToBePresent(FeedbackMessageErrorMessage);
+        } else {
+            common.waitForElementToBeNotVisible(ForenameErrorMessage);
+            common.waitForElementToBeNotVisible(EmailErrorMessage);
+            common.waitForElementToBeNotVisible(FeedbackMessageErrorMessage);
+        }
     }
 
     public void filloutRequiredFields(String forename, String email, String message) {
