@@ -6,14 +6,15 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: juniper-toys-automation-testing
 
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
+  workflow_dispatch:
+  
 jobs:
   build:
 
@@ -27,8 +28,6 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
     - name: Execute Tests
       run: mvn test
 
