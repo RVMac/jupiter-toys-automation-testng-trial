@@ -43,6 +43,7 @@ mvn clean test
 
 This project includes a GitHub Actions workflow to automate test execution.
 This will automatically trigger the run during pushing of changes to main branch in GitHub.
+This will also automatically trigger daily at 3:00 PM UTC
 
 To manually trigger the workflow:
 1. Navigate to the **Actions** tab in your GitHub repository.
