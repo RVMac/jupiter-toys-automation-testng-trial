@@ -41,11 +41,13 @@ mvn clean test
 
 ## Running Tests via GitHub Actions
 
-This project includes a GitHub Actions workflow to automate test execution. To manually trigger the workflow:
-1. Push your changes to GitHub.
-2. Navigate to the **Actions** tab in your GitHub repository.
-3. Select the **Run Automation Tests** workflow and click **Run workflow**.
-4. Monitor the execution logs to view test results.
+This project includes a GitHub Actions workflow to automate test execution.
+This will automatically trigger the run during pushing of changes to main branch in GitHub.
+
+To manually trigger the workflow:
+1. Navigate to the **Actions** tab in your GitHub repository.
+2. Select the **Run Automation Tests** workflow and click **Run workflow**.
+3. Monitor the execution logs to view test results.
 
 ## Reporting
 
